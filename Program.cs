@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Inheritance
 {
@@ -63,6 +63,36 @@ namespace Inheritance
             Console.WriteLine($"Hobby: {hobby}");
         }
      }
+    class Bear : Animal
+    {
+        public string hobby;
+
+        public Bear()
+                : base()
+        {
+            age = 0;
+            weight = 0;
+            hobby = "";
+
+        }
+
+        public Bear(string name, double age, double weight, string hobby)
+            : base(name)
+        {
+            this.age = age;
+            this.weight = weight;
+            this.hobby = hobby;
+        }
+
+        public override void display()
+        {
+            Console.WriteLine("Bear information...");
+            Console.WriteLine($"Name: {name}");
+            Console.WriteLine($"Age: {age}");
+            Console.WriteLine($"Weight: {weight}");
+            Console.WriteLine($"Hobby: {hobby}");
+        }
+    }
 
     class Program
     {
@@ -82,9 +112,21 @@ namespace Inheritance
             cat1.display();
             Console.WriteLine();
 
+            Bear bear1 = new Bear();
+            bear1.name = "Polar";
+            bear1.age = 1;
+            bear1.weight = 170;
+            bear1.hobby = "Eating Fish";
+            bear1.display();
+            Console.WriteLine();
+
             //derived class object using parameterized constructor
             Cat cat2 = new Cat("Randall", 2, 5, "Purring");
             cat2.display();
+            Console.WriteLine();
+
+            Bear bear2 = new Bear("Greg", 4, 230, "Growling");
+            bear2.display();
 
 
         }
